@@ -5,7 +5,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import AirplaneWar.GameMain;
-import Snake.SnakeGame;
 import Snake.SnakeGameMain;
 
 public class JavaArcade extends JFrame {
