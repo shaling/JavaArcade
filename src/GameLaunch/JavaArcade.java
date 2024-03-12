@@ -83,6 +83,7 @@ public class JavaArcade extends JFrame {
         add(AirplaneGameButton);
         add(g3GameButton);
         add(g4GameButton);
+        add(g5GameButton);
         setVisible(true);
     }
 
