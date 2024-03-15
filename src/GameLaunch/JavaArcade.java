@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import AirplaneWar.GameMain;
 import Snake.SnakeGameMain;
-
+import ChessPackage.*;
 public class JavaArcade extends JFrame {
     private static JFrame mainMenuWindow;
     public JavaArcade() {
@@ -67,14 +67,14 @@ public class JavaArcade extends JFrame {
             }
         });
 
-        JButton g5GameButton = new JButton("2D Chess");
+        JButton g5GameButton = new JButton("Chess Engine");
         //change the font
         g5GameButton.setFont(new Font("Arial", Font.PLAIN, 30));
 
         g5GameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Start 2D Chess");
+                new StartChess();
             } 
         });
 
