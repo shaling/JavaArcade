@@ -7,6 +7,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.RenderingHints;
 
@@ -21,12 +23,16 @@ import piece.Rook;
 
 public class GamePanel extends JPanel implements Runnable{
 
+    public static GamePanel Instance;
+
     public static final int width = 1100;
     public static final int height = 800;
     final int fps = 60;
     Thread gameThread;
     ChessBoard board = new ChessBoard();
     Mouse mouse = new Mouse();
+    JButton exitButton = new JButton("Exit Game");
+    JButton restartButton = new JButton("Restart");
 
     // Pieces 
     public static ArrayList<Piece> pieces = new ArrayList<>(); //back up list
@@ -48,6 +54,11 @@ public class GamePanel extends JPanel implements Runnable{
     boolean stalemate;
 
     public GamePanel(){
+        if(Instance != null){
+            ExitChess.CloseChess();
+            pieces = new ArrayList<>();
+            simPieces = new ArrayList<>();
+        }
 
         setPreferredSize(new Dimension(width,height));
         setBackground(Color.BLACK);
@@ -58,6 +69,8 @@ public class GamePanel extends JPanel implements Runnable{
         setPieces(white, 6, 7);
         setPieces(black, 1, 0);
         copyPieces(pieces, simPieces);
+
+        Instance = this;
     }
 
     public void launchGame(){
@@ -593,6 +606,7 @@ public class GamePanel extends JPanel implements Runnable{
             }
         }
         if(gameOver){
+            WhenGameEnds(g2);
             String str = "";
             if(currentColor == white){
                 str = "White Wins";
@@ -604,9 +618,38 @@ public class GamePanel extends JPanel implements Runnable{
             g2.drawString(str,200,420);
         }
         if(stalemate){
+            WhenGameEnds(g2);
             g2.setFont(new Font("Arial", Font.PLAIN, 90));
             g2.setColor(Color.GRAY);
             g2.drawString("Stalemate",200,420);
+        }
+    }
+
+    boolean once = true;
+    void WhenGameEnds(Graphics g2){
+        if(once){
+            once = false;
+            //display exit
+            exitButton.addActionListener( e -> ExitChess.CloseChess());
+            exitButton.setFont(new Font("Arial", Font.PLAIN, 40));
+            exitButton.setBounds(0, 500, 400, 100);
+            exitButton.setVisible(true);
+            this.add(exitButton);
+
+            //display restart
+            restartButton.addActionListener( e -> new StartChess());
+            restartButton.setFont(new Font("Arial", Font.PLAIN, 40));
+            restartButton.setBounds(400, 500, 400, 100);
+            restartButton.setVisible(true);
+            this.add(restartButton);
+            paint(g2);
+
+            gameThread = null;
+
+            
+            
+
+
         }
     }
 }
