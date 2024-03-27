@@ -1,6 +1,5 @@
 .idea/
 out/
 bin/
-*.class
 .project
 .vscode/
