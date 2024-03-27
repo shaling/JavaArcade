@@ -1,5 +1,9 @@
 .idea/
 out/
-
+src/.idea
+src/.classpath
+src/.project
+src/out/
+src/JavaArcade.iml
 .project
 .vscode/
