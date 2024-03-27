@@ -7,3 +7,4 @@ src/out/
 src/JavaArcade.iml
 .project
 .vscode/
+.DS_Store

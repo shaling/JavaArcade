@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import AirplaneWar.GameMain;
 import Snake.SnakeGameMain;
+import javax.swing.border.Border;
 import ChessPackage.*;
 public class JavaArcade extends JFrame {
     private static JFrame mainMenuWindow;
@@ -31,11 +32,20 @@ public class JavaArcade extends JFrame {
         };
         panel.setLayout(null);
         setContentPane(panel);
+        Border raisedBevel = BorderFactory.createRaisedBevelBorder();
+        Border loweredBevel = BorderFactory.createLoweredBevelBorder();
+        Border compound = BorderFactory.createCompoundBorder(raisedBevel, loweredBevel);
+        Color semiTransparent = new Color(3, 161, 248, 158);
+
 
         JButton snakeGameButton = new JButton("Snake Game");
         // change the font
         snakeGameButton.setFont(new Font("Arial", Font.PLAIN, 25));
-        snakeGameButton.setBounds(348, 150, 200, 50);
+        snakeGameButton.setBounds(348, 120, 200, 50);
+        snakeGameButton.setBorder(compound);
+        snakeGameButton.setBackground(semiTransparent);
+        snakeGameButton.setForeground(Color.WHITE);
+        snakeGameButton.setOpaque(true);
 
         snakeGameButton.addActionListener(new ActionListener() {
             @Override
@@ -45,11 +55,14 @@ public class JavaArcade extends JFrame {
         });
 
 
-        JButton AirplaneGameButton = new JButton("Airplane War Game");
+        JButton AirplaneGameButton = new JButton("AirplaneWar");
         // change the font
         AirplaneGameButton.setFont(new Font("Arial", Font.PLAIN, 25));
-        AirplaneGameButton.setBounds(348, 210, 200, 50);
-
+        AirplaneGameButton.setBounds(148, 210, 200, 50);
+        AirplaneGameButton.setBorder(compound);
+        AirplaneGameButton.setBackground(semiTransparent);
+        AirplaneGameButton.setForeground(Color.WHITE);
+        AirplaneGameButton.setOpaque(true);
         AirplaneGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -62,7 +75,11 @@ public class JavaArcade extends JFrame {
         JButton g3GameButton = new JButton("Miniature Casino");
         // change the font
         g3GameButton.setFont(new Font("Arial", Font.PLAIN, 25));
-        g3GameButton.setBounds(348, 270, 200, 50);
+        g3GameButton.setBounds(548, 210, 200, 50);
+        g3GameButton.setBorder(compound);
+        g3GameButton.setBackground(semiTransparent);
+        g3GameButton.setForeground(Color.WHITE);
+        g3GameButton.setOpaque(true);
 
         g3GameButton.addActionListener(new ActionListener() {
             @Override
@@ -74,7 +91,11 @@ public class JavaArcade extends JFrame {
         JButton g4GameButton = new JButton("PONG Game");
         // change the font
         g4GameButton.setFont(new Font("Arial", Font.PLAIN, 25));
-        g4GameButton.setBounds(348, 330, 200, 50);
+        g4GameButton.setBounds(148, 330, 200, 50);
+        g4GameButton.setBorder(compound);
+        g4GameButton.setBackground(semiTransparent);
+        g4GameButton.setForeground(Color.WHITE);
+        g4GameButton.setOpaque(true);
 
         g4GameButton.addActionListener(new ActionListener() {
             @Override
@@ -86,7 +107,11 @@ public class JavaArcade extends JFrame {
         JButton g5GameButton = new JButton("Chess Engine");
         //change the font
         g5GameButton.setFont(new Font("Arial", Font.PLAIN, 25));
-        g5GameButton.setBounds(348, 390, 200, 50);
+        g5GameButton.setBounds(548, 330, 200, 50);
+        g5GameButton.setBorder(compound);
+        g5GameButton.setBackground(semiTransparent);
+        g5GameButton.setForeground(Color.WHITE);
+        g5GameButton.setOpaque(true);
 
         g5GameButton.addActionListener(new ActionListener() {
             @Override
