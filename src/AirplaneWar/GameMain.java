@@ -1,8 +1,8 @@
 package AirplaneWar;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
+import javax.sound.sampled.*;
+import java.io.File;
 
 import GameLaunch.JavaArcade;
 
@@ -28,6 +28,22 @@ public class GameMain extends JPanel {
     private int bullet_enemy = 0;
     private Thread gmThread;
     private JFrame gmwindow;
+    private Clip clip;
+
+    private void playSound(String filepath){
+        try {
+            File soudFile = new File(filepath);
+            AudioInputStream audioInput = AudioSystem.getAudioInputStream(soudFile);
+            clip = AudioSystem.getClip();
+            clip.open(audioInput);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception e) {
+            System.out.println("Error with playing sound.");
+            e.printStackTrace();
+
+        }
+    }
+
 
     public void moveAll() {
         bg.move();
@@ -191,17 +207,23 @@ public class GameMain extends JPanel {
         for (Bomb bomb : bombs) {
             bomb.paint(g);
         }
-        if (state == 2) {
+//        if (state == 2) {
+//            g.setColor(Color.red);
+//            g.setFont(new java.awt.Font("Arial", 1, 40));
+//            g.drawString("Game Over!", 200, 400);
+//            g.drawString("Score:" + score, 200, 450);
+//        }
+        if(state == 0){
             g.setColor(Color.red);
             g.setFont(new java.awt.Font("Arial", 1, 40));
-            g.drawString("Game Over!", 200, 400);
-            g.drawString("Score:" + score, 200, 450);
+            g.drawString("Click to Start", 200, 400);
         }
 
     }
 
     public void initUi(JFrame window) {
         this.gmwindow = window;
+        playSound("lib/bgm_airplane.wav");
         MouseAdapter ma = new MouseAdapter() {
             public void mouseMoved(MouseEvent e) {
                 if (state == 1) {
@@ -262,7 +284,7 @@ public class GameMain extends JPanel {
     public void endGame() {
         // Show a dialog when the game ends
         int option = JOptionPane.showOptionDialog(null, 
-                                                  "Game Over! What do you want to do next?", 
+                                                  "Game Over!  Your score is "+score+ "\nWhat do you want to do next?",
                                                   "Game Over", 
                                                   JOptionPane.YES_NO_OPTION, 
                                                   JOptionPane.QUESTION_MESSAGE, 
@@ -272,13 +294,24 @@ public class GameMain extends JPanel {
 
         if (option == JOptionPane.YES_OPTION) {
             gmThread.interrupt();
-            gmwindow.dispose();
+            clip.stop();
+            clip.close();
+//            gmwindow.dispose();
+            SwingUtilities.invokeLater(() -> {
+                gmwindow.dispose();
+                new GameMain().start();
+            });
             // If the player chooses "Play Again", restart the game
-            start();
+//            start();
         } else {
+            gmThread.interrupt();
             // If the player chooses "Return to Menu", show the main menu
-            gmwindow.dispose();
-            new JavaArcade();
+            clip.stop();
+            clip.close();
+            SwingUtilities.invokeLater(() -> {
+                gmwindow.dispose();
+                new JavaArcade();
+            });
         }
     }
 
