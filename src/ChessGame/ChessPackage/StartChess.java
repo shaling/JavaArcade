@@ -11,7 +11,7 @@ public class StartChess {
 
         JFrame window = new JFrame("Chess");
         window.setIconImage(image.getImage());
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         window.setResizable(false);
 
         //Adds GamePanel to the window 
