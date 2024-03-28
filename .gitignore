@@ -8,3 +8,4 @@ src/JavaArcade.iml
 .project
 .vscode/
 .DS_Store
+/bin/
