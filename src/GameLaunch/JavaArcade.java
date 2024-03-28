@@ -8,6 +8,8 @@ import AirplaneWar.GameMain;
 import Snake.SnakeGameMain;
 import javax.swing.border.Border;
 import ChessPackage.*;
+import MiniCasinoPackage.*;
+
 public class JavaArcade extends JFrame {
     private static JFrame mainMenuWindow;
     public JavaArcade() {
@@ -84,7 +86,7 @@ public class JavaArcade extends JFrame {
         g3GameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Start Miniature Casino");
+                MiniCasino.main(new String[]{});
             }
         });
 

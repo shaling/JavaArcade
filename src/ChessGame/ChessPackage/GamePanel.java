@@ -81,7 +81,7 @@ public class GamePanel extends JPanel implements Runnable{
     // colour would be 0 for white team and 1 for black team, back row is for other pieces after pawn
     // White team pawn row is 6 and back row is 7
     // Black team pawn row is 1 and back row is 0
-    public void setPieces(int colour, int pawn, int back){  
+    public void setPieces(int colour, int pawn, int back){
         for(int i = 0; i < 8; i++){
             pieces.add(new Pawn(colour, i,pawn));  
         }
