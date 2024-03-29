@@ -70,7 +70,7 @@ public class MiniCasino extends Application {
 	   
 	    
 	    //Setting main menu background image
-	    Image casino = new Image("file:FuturisticCasino.jpeg");
+	    Image casino = new Image("file:lib//FuturisticCasino.jpeg");
         BackgroundImage casinoBackground = new BackgroundImage(
                 casino,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
