@@ -2,8 +2,6 @@ package MiniCasinoPackage;
 import java.util.ArrayList;
 import java.util.Random;
 
-import MiniCasinoPackage.BlackJack.Card;
-
 
 /** This class holds all of the basic blackjack logic 
  * 
