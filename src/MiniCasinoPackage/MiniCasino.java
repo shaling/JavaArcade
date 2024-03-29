@@ -70,7 +70,7 @@ public class MiniCasino extends Application {
 	   
 	    
 	    //Setting main menu background image
-	    Image casino = new Image("file:FuturisticCasino.jpeg");
+	    Image casino = new Image("file:lib/FuturisticCasino.jpeg");
         BackgroundImage casinoBackground = new BackgroundImage(
                 casino,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
@@ -154,7 +154,7 @@ public class MiniCasino extends Application {
 	    blackjackMainRoot.setGridLinesVisible(false);
 	    
 	    //setting background image for BlackJack game
-		 Image table = new Image("file:BG.jpeg");
+		 Image table = new Image("file:lib/BG.jpeg");
 
 	        // Create a background image
 	        BackgroundImage backgroundImage = new BackgroundImage(
@@ -180,7 +180,7 @@ public class MiniCasino extends Application {
 	    startButton.setMinHeight(40);
 	    blackjackMainRoot.add(startButton, 1, 1);
 	    
-	    Image blackjackMenuImage = new Image ("file:CardsFuturistic.png");
+	    Image blackjackMenuImage = new Image ("file:lib/CardsFuturistic.png");
         ImageView blackjackMenuImageView = new ImageView(blackjackMenuImage);
         blackjackMenuImageView.setPreserveRatio(true);
         blackjackMenuImageView.setFitWidth(250);
@@ -375,7 +375,7 @@ public class MiniCasino extends Application {
 		
 		
 		//draw dealer's hidden card
-		Image Hidden = new Image ("file:cards//BACK.png");
+		Image Hidden = new Image ("file:lib/cards/BACK.png");
 		ImageView imageview = new ImageView (Hidden);
 		imageview.setFitWidth(80);
 		imageview.setPreserveRatio(true);
@@ -705,7 +705,7 @@ public class MiniCasino extends Application {
         primaryStage.setScene(rouletteMenuScene);
         
       //Set background image to roulette board
-    	Image rouletteMenuImage = new Image ("file:roulettemenuimage.jpeg");
+    	Image rouletteMenuImage = new Image ("file:lib/roulettemenuimage.jpeg");
     	
     	BackgroundImage rouletteMenuBackgroundImage = new BackgroundImage(
                 rouletteMenuImage,
@@ -773,7 +773,7 @@ public void rouletteBoard () {
         primaryStage.show();
 
     	//Set background image to roulette board
-    	Image rouletteBoard = new Image ("file:board.jpeg");
+    	Image rouletteBoard = new Image ("file:lib/board.jpeg");
     	
     	BackgroundImage rouletteBackground = new BackgroundImage(
                 rouletteBoard,
@@ -1060,7 +1060,7 @@ public void rouletteBoard () {
         rouletteWheelRoot.getChildren().add(backToBoardButton);
         
         //Set background image to roulette wheel 
-    	Image coolBackGround = new Image ("file:roulettewheelbackground.jpeg");
+    	Image coolBackGround = new Image ("file:lib/roulettewheelbackground.jpeg");
     	
     	BackgroundImage rouletteWheelBackgroundImage = new BackgroundImage(
                 coolBackGround,
@@ -1078,7 +1078,7 @@ public void rouletteBoard () {
     	
     	rouletteWheelRoot.setBackground(rouletteWheelBackground);
     	
-    	 Image wheelImage = new Image("file:roulettewheel.png");
+    	 Image wheelImage = new Image("file:lib/roulettewheel.png");
          ImageView wheelImageView = new ImageView(wheelImage);
          wheelImageView.setFitWidth(400);
          wheelImageView.setFitHeight(400);
@@ -1156,7 +1156,7 @@ public void endRouletteGameMenu () {
         primaryStage.show();
         
         
-    	Image rouletteEndMenuImage = new Image ("file:endmenuroulette.jpeg");
+    	Image rouletteEndMenuImage = new Image ("file:lib/endmenuroulette.jpeg");
     	
     	BackgroundImage rouletteEndMenuBackground = new BackgroundImage(
                 rouletteEndMenuImage,

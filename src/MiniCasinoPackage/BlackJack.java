@@ -345,7 +345,7 @@ public class BlackJack {
 		//method returns image path for drawing in GUI
 		public String imagePath () {
 	
-			String str = "file:cards//" + this.value + "-" + this.type + ".png";
+			String str = "file:lib/cards/" + this.value + "-" + this.type + ".png";
 			return str;
 		
 		}
