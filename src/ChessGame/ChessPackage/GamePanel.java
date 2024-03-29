@@ -1,4 +1,4 @@
-package ChessPackage;
+package ChessGame.ChessPackage;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
@@ -12,13 +12,13 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.RenderingHints;
 
-import piece.Bishop;
-import piece.King;
-import piece.Knight;
-import piece.Pawn;
-import piece.Piece;
-import piece.Queen;
-import piece.Rook;
+import ChessGame.piece.Bishop;
+import ChessGame.piece.King;
+import ChessGame.piece.Knight;
+import ChessGame.piece.Pawn;
+import ChessGame.piece.Piece;
+import ChessGame.piece.Queen;
+import ChessGame.piece.Rook;
 
 
 public class GamePanel extends JPanel implements Runnable{
