@@ -1,7 +1,7 @@
-package piece;
+package ChessGame.piece;
 
-import ChessPackage.GamePanel;
-import ChessPackage.Type;
+import ChessGame.ChessPackage.GamePanel;
+import ChessGame.ChessPackage.Type;
 
 public class Rook extends Piece{
 

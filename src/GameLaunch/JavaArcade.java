@@ -7,7 +7,7 @@ import java.awt.event.*;
 import AirplaneWar.GameMain;
 import Snake.SnakeGameMain;
 import javax.swing.border.Border;
-import ChessPackage.*;
+import ChessGame.ChessPackage.*;
 import MiniCasinoPackage.*;
 
 public class JavaArcade extends JFrame {
