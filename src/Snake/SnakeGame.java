@@ -369,4 +369,16 @@ public class SnakeGame extends JPanel implements ActionListener{
     private enum Direction {
         UP, DOWN, RIGHT, LEFT
     }
+
+    public void stopMusic() {
+        if (introMusicClip != null && introMusicClip.isRunning()) {
+            introMusicClip.stop();
+        }
+        if (backgroundMusicClip != null && backgroundMusicClip.isRunning()) {
+            backgroundMusicClip.stop();
+        }
+        if (acceleratingMusicClip != null && acceleratingMusicClip.isRunning()) {
+            acceleratingMusicClip.stop();
+        }
+    }
 }
