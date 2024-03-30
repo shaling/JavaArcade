@@ -1,4 +1,4 @@
-package ChessGame.ChessPackage;
+package ChessPackage;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;

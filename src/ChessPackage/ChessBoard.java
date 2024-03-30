@@ -1,4 +1,4 @@
-package ChessGame.ChessPackage;
+package ChessPackage;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

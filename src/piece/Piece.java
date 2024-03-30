@@ -1,11 +1,11 @@
-package ChessGame.piece;
+package piece;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
-import ChessGame.ChessPackage.ChessBoard;
-import ChessGame.ChessPackage.GamePanel;
-import ChessGame.ChessPackage.Type;
+import ChessPackage.ChessBoard;
+import ChessPackage.GamePanel;
+import ChessPackage.Type;
 
 import java.io.*;
 

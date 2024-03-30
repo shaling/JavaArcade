@@ -7,7 +7,7 @@ import java.awt.event.*;
 import AirplaneWar.GameMain;
 import Snake.SnakeGameMain;
 import javax.swing.border.Border;
-import ChessGame.ChessPackage.*;
+import ChessPackage.*;
 import MiniCasinoPackage.*;
 import pong.PongGame;
 

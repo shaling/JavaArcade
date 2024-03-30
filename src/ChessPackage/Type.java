@@ -1,4 +1,4 @@
-package ChessGame.ChessPackage;
+package ChessPackage;
 
 public enum Type {
     

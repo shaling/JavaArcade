@@ -1,4 +1,4 @@
-package ChessGame.ChessPackage;
+package ChessPackage;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
