@@ -9,6 +9,7 @@ import Snake.SnakeGameMain;
 import javax.swing.border.Border;
 import ChessGame.ChessPackage.*;
 import MiniCasinoPackage.*;
+import pong.PongGame;
 
 public class JavaArcade extends JFrame {
     private static JFrame mainMenuWindow;
@@ -102,7 +103,8 @@ public class JavaArcade extends JFrame {
         g4GameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Start PONG Game");
+                PongGame.main(new String[]{});
+
             }
         });
 
