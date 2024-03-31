@@ -11,6 +11,8 @@ import java.awt.event.MouseEvent;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GameMain extends JPanel {
 
@@ -271,12 +273,23 @@ public class GameMain extends JPanel {
         JFrame jf = new JFrame("Airplane War");
         jf.setSize(bg.getBgWidth(), bg.getBgHeight());
         jf.setLocationRelativeTo(null);
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         jf.setResizable(false);
         jf.add(this);
         jf.setVisible(true);
         initUi(jf);
         // gmwindow = jf;
+        jf.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                // Stop the game thread when the window is closed
+                if (clip != null && clip.isRunning()) {
+                    clip.stop();
+                }
+            }
+        });
+
         
     }
 
